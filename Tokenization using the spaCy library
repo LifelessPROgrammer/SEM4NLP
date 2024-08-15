@@ -1,0 +1,9 @@
+import spacy
+nlp = spacy.blank("en")
+
+str = "Welcome to the Natural Language Processing"
+doc = nlp(str)
+
+words = [word.text for word in doc]
+print(words)
+
