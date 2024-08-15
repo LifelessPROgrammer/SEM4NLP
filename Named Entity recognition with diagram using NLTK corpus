@@ -1,0 +1,24 @@
+import nltk
+from nltk import tokenize
+
+# Define the grammar
+groucho_grammar = nltk.CFG.fromstring("""
+  S -> NP VP
+  PP -> P NP
+  NP -> Det N | Det N PP | 'I'
+  VP -> V NP | VP PP
+  Det -> 'an' | 'my'
+  N -> 'elephant' | 'pajamas'
+  V -> 'shot'
+  P -> 'in'
+  """)
+
+# Sentence to be parsed
+sent = ['I', 'shot', 'an', 'elephant', 'in', 'my', 'pajamas']
+
+# Create a parser with the defined grammar
+parser = nltk.ChartParser(groucho_grammar)
+
+# Parse the sentence and display the tree(s)
+for tree in parser.parse(sent):
+    tree.pretty_print()  # This prints the tree vertically in the console 
