@@ -1,0 +1,13 @@
+#!pip install -U spacy
+#!python -m spacy download en_core_web_sm import spacy
+import spacy
+# Load English tokenizer, tagger, parser and NER 
+nlp = spacy.load("en_core_web_sm")
+
+# Process whole documents
+text = ("Education provides stability in life," "and it's something that no one can ever take away from you." "By being well-educated and holding a college degree, you increase your chances for better career opportunities and open up new doors for yourself." )
+doc = nlp(text)
+
+# Analyse syntax
+print("Noun phrases:", [chunk.text for chunk in doc.noun_chunks]) 
+print("Verbs:", [token.lemma_ for token in doc if token.pos_ == "VERB"])
