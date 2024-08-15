@@ -1,0 +1,9 @@
+import nltk
+from nltk.tokenize import word_tokenize
+
+str = "Welcome to the Natural Language Processing"
+
+import nltk
+nltk.download('punkt')
+
+print(word_tokenize(str))
