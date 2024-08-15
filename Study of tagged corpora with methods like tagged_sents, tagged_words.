@@ -1,0 +1,13 @@
+import nltk
+from nltk import tokenize
+nltk.download('punkt')
+nltk.download('words')
+
+para = "Hello! I'm Batman."
+sents = tokenize.sent_tokenize(para)
+print("n\sentence tokenization\n=============\n", sents)
+
+print("\nword tokenization\n============\n")
+for index in range(len(sents)):
+  word = tokenize.word_tokenize(sents[index])
+  print(word)
