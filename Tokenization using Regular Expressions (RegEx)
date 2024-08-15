@@ -1,0 +1,9 @@
+!pip install nltk
+import nltk
+from nltk.tokenize import RegexpTokenizer
+
+tk = RegexpTokenizer('\s+', gaps = True)
+str = "Welcome to the Natural Language Processing"
+tokens = tk.tokenize(str)
+print(tokens)
+
